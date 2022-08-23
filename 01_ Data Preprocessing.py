@@ -28,10 +28,14 @@ imputer.fit(X[:, 1:3])
 X[:, 1:3] = imputer.transform(X[:, 1:3])
 
 
-#-------Encoding categorical data
+"""Encoding categorical data"""
 
 
 #-------Encoding the Independent Variable
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import OneHotEncoder
+ct = ColumnTransformer(transformers=[('encoder', OneHotEncoder(), [0])], remainder='passthrough')
+X = np.array(ct.fit_transform(X))
 
 
 #-------Encoding the Dependent Variable
