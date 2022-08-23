@@ -39,6 +39,9 @@ X = np.array(ct.fit_transform(X))
 
 
 #-------Encoding the Dependent Variable
+from sklearn.preprocessing import LabelEncoder
+le = LabelEncoder()
+y = le.fit_transform(y)
 
 
 #-------Splitting the dataset into the Training set and Test set
