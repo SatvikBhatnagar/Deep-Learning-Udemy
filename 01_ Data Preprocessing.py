@@ -14,6 +14,11 @@ import pandas as pd
 
 
 #-------Importing the dataset
+dataset = pd.read_csv("Materials/Part 1 - Data Preprocessing/Section 2 -------------------- Part 1 - Data Preprocessing --------------------/Python/Data.csv")
+X = dataset.iloc[:, :-1].values #iloc -> locate indexes --- iloc[rows, columns]
+y = dataset.iloc[:, -1].values
+#print(X)
+#print(y)
 
 
 #-------Taking care of missing data
