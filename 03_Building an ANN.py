@@ -20,8 +20,14 @@ dataset = pd.read_csv("Deep-Learning-Udemy/03_Churn_Modelling.csv")
 X = dataset.iloc[:, 3:-1].values #iloc -> locate indexes --- iloc[rows, columns]
 y = dataset.iloc[:, -1].values
 
+
 # Encoding categorical data
+
 # Label Encoding the "Gender" column
+from sklearn.preprocessing import LabelEncoder
+le = LabelEncoder()
+X[:, 2] = le.fit_transform(X[:, 2])
+
 
 # One Hot Encoding the "Geography" column
 
