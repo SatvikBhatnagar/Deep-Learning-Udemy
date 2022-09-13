@@ -16,7 +16,9 @@ import tensorflow as tf
 # Part 1 - Data Preprocessing
 
 # Importing the dataset
-
+dataset = pd.read_csv("Deep-Learning-Udemy/03_Churn_Modelling.csv")
+X = dataset.iloc[:, 3:-1].values #iloc -> locate indexes --- iloc[rows, columns]
+y = dataset.iloc[:, -1].values
 
 # Encoding categorical data
 # Label Encoding the "Gender" column
