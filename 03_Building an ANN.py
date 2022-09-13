@@ -30,6 +30,10 @@ X[:, 2] = le.fit_transform(X[:, 2])
 
 
 # One Hot Encoding the "Geography" column
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import OneHotEncoder
+ct = ColumnTransformer(transformers=[('encoder', OneHotEncoder(), [1])], remainder='passthrough')
+X = np.array(ct.fit_transform(X))
 
 
 # Splitting the dataset into the Training set and Test set
